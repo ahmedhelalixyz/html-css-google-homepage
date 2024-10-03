@@ -1,0 +1,285 @@
+/* 
+    There is a heriarchy for selectors in css:
+        id #
+        class .
+        tag
+        *
+
+
+    Astrix '*' is for defining the general the canvas styles.
+        border-box; whenever we give an element/container a border, we want the border to be containied inside of the box sizing.
+        margin; represents outer space between containers.
+        padding; where margin is the space outside the container, padding is the spacing inside the container (like padding a box).
+        font-family; fonts can be obtained from Google Fonts.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+/* 
+    Steps to make body main take most of the space is:
+        - body display is flex
+        - body flex-direction is column
+        - main (way down in file) flex is 1
+        - body min-height is 100vh
+*/
+
+body {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    /* 
+        min-height allows it to grow as big as it wants, however it has a min height.
+        vh is a unit stands for view height, no next to it is a %.
+     */
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* 
+    display; Think about it that you can have html/css display as cols or rows, either rows within cols or cols within rows. (either aligned horizontially or vertically).
+        flex; he has tutorial for it (https://www.youtube.com/watch?v=F5_nBy66LJs&t=0s), default orientation is horizontal (rows first, followed by columns).
+    justify-content; imagine justifying a word doc, how they are aligned across the axis.
+        space-between; rather aggresive...
+    alignment; how they are aligned perpendicular to the axis.
+    using margin vs padding; try always to use header first.
+    gap; spaces elements within container.
+*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* rem is a preset relative value*/
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.google-header {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* 
+    color
+        inherit; inherits default from document
+    text-decoration
+        was set to underline since they were links. "none" cancels that. Since we want the link to show an underline when we hover over it, we use the ":" selector shown below.
+*/
+.text-link,
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-link:hover,
+footer a:hover {
+    text-decoration: underline;
+}
+
+.nav-container-second .text-link {
+    display: none;
+}
+
+/* 
+    Again, regarding "display":
+        if you have one element in the container and you want to center it, we can use "grid" and then the property "place-items" with value "center".
+*/
+.icon-link {
+    font-size: 1rem;
+    color: inherit;
+    text-decoration: none;
+    width: 35px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+
+}
+
+.icon-link:hover {
+    background: rgba(235, 235, 235, 0.952);
+}
+
+.img-button {
+    border: none;
+    background: transparent;
+}
+
+/* 
+    You can chain selectors!!!
+    for img css properties.
+        width...Obv
+        aspect-ratio; if picture is rectangle for example and you would like it square, you could use this property, width / height ex. 1 / 1 (square)
+        overflow; how to handle overflow
+        border-radius: 100% means circle, 50% still pretty circular, 20% square with rounded edges.
+*/
+.img-button img {
+    width: 35px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+main {
+    /* flex property tells how much it space it takes, default is 0, max is 1. */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 1rem;
+}
+
+.title-text {
+    font-size: 3rem;
+}
+
+.input-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    /* border has three attributes thickness, type of line, colour*/
+    border: 1px solid rgba(235, 235, 235, 0.952);
+    padding: 1rem;
+    /* using % with border radius is not always the best option, border-radius of 100% here looks effy, border-radius can also take units */
+    border-radius: 3rem;
+
+}
+
+/* 
+    you can add same style to two identifiers by seprating them with a "," and new lines are allowed.
+    box-shadow has couple of attributes.
+*/
+.input-bar:hover,
+.input-bar:focus-within {
+    box-shadow: 0 0 4px 1px rgba(235, 235, 235, 0.952);
+}
+
+.input-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.input-bar div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-icon {
+    background: transparent;
+    border: none;
+
+}
+
+.input-icon:hover {
+    opacity: .6;
+}
+
+.button-grid {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button-grid button {
+    /* when padding has two values the first is vertical and the second is horizontal.*/
+    padding: .5rem 1rem;
+    border: 1px solid transparent;
+    background: rgb(245, 245, 245);
+    border-radius: .25rem;
+
+}
+
+/* when want to add a box shadow to buttons, it might be advised to ,make border go from transparent to a color. So we can avoid making the screen/animation look jumpy (ex: in video at 2:34:05). With this technique, the border/shadow pixels are now already accounted for. */
+.button-grid button:hover {
+    border: 1px solid slategray;
+}
+
+.language-text {
+    font-size: 0.7rem;
+}
+
+.language-link {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.language-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: rgb(245, 245, 245);
+    font-size: 0.7;
+}
+
+/* 
+    using ">" symbol to target/affect the direct descandant of footer, without that all divs in footer would get paddings and that just looks bad. 
+*/
+footer>div {
+    padding: 1rem;
+}
+
+
+/* 
+    "space-around" is used so the spacing is equal on all sides. Picture below should help.
+    ---- (1 2 3) ---- (4 5 6) ----
+*/
+.footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+@media (min-width: 640px) {
+
+    footer {
+        font-size: 0.8;
+    }
+
+    /* 
+        "space-around" is used so the spacing is equal on all sides. Picture below should help.
+        ---- (1 2 3) ---- (4 5 6) ----
+    */
+    .footer-grid {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+
+    .nav-container-second .text-link {
+        display: block;
+    }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Home Page</title>
+    <!-- 
+        style tag can be used also instead of link tag. Obv, link tag is better. 
+    -->
+    <style></style>
+    <!-- 
+        Underneath there are link tags from Google Fonts, cdn Fontawesome. In this comment their website url are provided for refernce.
+            Google Fonts; https://fonts.google.com/
+            FontAwesome CDN; https://cdnjs.com/libraries/font-awesome
+            FontAwesome Icons; https://www.fontawesome.com
+    -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a class="text-link" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <p>About</p>
+            </a>
+
+            <a class="text-link" target="_blank" href="https://youtu.be/QK8mJJJvaes?si=t2GnNjog8TZ0bciu">
+                <p>Store</p>
+            </a>
+        </div>
+        <nav class="nav-container nav-container-second">
+            <a class="text-link" target="_blank" href="https://youtu.be/ch8vlRPe1Fo?si=fyfDCewe9Se3AL_Y&t=20">
+                <p>Gmail</p>
+            </a>
+            <a class="text-link" target="_blank" href="https://youtu.be/OFe9B0SEVk8?si=BqF_wkpiKNhAz-_W&t=67">
+                <p>Images</p>
+            </a>
+            <a class="icon-link" target="_blank" href="https://youtu.be/onVhbeY7nLM?si=BkCwcOzKBr4Al-wJ">
+                <i class="fa-solid fa-rocket"></i>
+            </a>
+            <a class="icon-link" href="https://youtu.be/tmWKvvXzlyg?si=_kPVd6lJNzfQQ2UP&t=133" target="_blank">
+                <i class="fa-solid fa-cat"></i>
+            </a>
+            <button class="img-button">
+                <!-- 
+                    / symbol in the begining tells us that we will search in the root directoy.
+                    public folder is usually used for static resources.
+                -->
+                <img src="/public/pfp.jpg" alt="profile-picture" />
+            </button>
+
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="title-text">Google</h1>
+        <div class="input-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input title="Search" />
+            <div>
+                <button class="input-icon">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+                <button class="input-icon">
+                    <i class="fa-solid fa-camera "></i>
+                </button>
+            </div>
+        </div>
+        <div class="button-grid">
+            <button>
+                <p>Google Search</p>
+            </button>
+            <button>
+                <p>I'm Feeling Lucky</p>
+            </button>
+        </div>
+        <!-- Paragraph tags can contain anchor tags -->
+        <p class="language-text">Google offered in: <a class="language-link">Arabic</a></p>
+    </main>
+    <footer>
+        <div>
+            <p>Egypt</p>
+        </div>
+        <hr />
+        <div class="footer-grid">
+            <div class="footer-links">
+                <a href="/">
+                    <p>Advertising</p>
+                </a>
+                <a href="/">
+                    <p>Buisness</p>
+                </a>
+                <a href="/">
+                    <p>How Search Works</p>
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="/">
+                    <p>Privacy</p>
+                </a>
+                <a href="/">
+                    <p>Terms</p>
+                </a>
+                <a href="/">
+                    <p>Settings</p>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
